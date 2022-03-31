@@ -1,6 +1,6 @@
 # Rigel: An Interactive Data Transformation System
 
-This repo is an implementation of the paper "Rigel: Transforming Tabular Data By Declarative Mapping" (submitted to IEEE VIS 2022), [Online Demo](https://rigel-system.github.io/rigel-system/).
+This repo is an implementation of the paper "Rigel: Transforming Tabular Data By Declarative Mapping" (submitted to IEEE VIS 2022), [Online Demo](https://rigel-data.github.io/rigel-system/).
 
 
 ## Example Gallery
