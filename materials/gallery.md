@@ -33,7 +33,7 @@ For all valid operations, we provide the corresponding details as follows.
 
 **Definition:** Import one or more tables to the workspace from some exterior source.
 
-**Illustration:** ![create-tables](https://github.com/rigel-data/rigel-system/blob/master/pics/create-tables.png) 
+**Illustration:** ![create-tables](https://github.com/rigel-data/rigel-sys/blob/master/pics/create-tables.png) 
 
 **Example:**   In Rigel, users can import a table using the *Choose File* button and select the CSV file on his/her own. Also, users can directly import some example tables prepared by us.
 
@@ -43,7 +43,7 @@ For all valid operations, we provide the corresponding details as follows.
 
 **Definition:**  Add a new column directly into some table, without referring to other data sources.
 
-**Illustration:** ![create-columns](https://github.com/rigel-data/rigel-system/blob/master/pics/create-columns.png) 
+**Illustration:** ![create-columns](https://github.com/rigel-data/rigel-sys/blob/master/pics/create-columns.png) 
 
 **Example:**  Omitted. (This function can be directly integrated into the spreadsheet toolkit.)
 
@@ -53,7 +53,7 @@ For all valid operations, we provide the corresponding details as follows.
 
 **Definition:**  Add a new row directly into some table, without referring to other data sources.
 
-**Illustration:** ![create-rows](https://github.com/rigel-data/rigel-system/blob/master/pics/create-rows.png) 
+**Illustration:** ![create-rows](https://github.com/rigel-data/rigel-sys/blob/master/pics/create-rows.png) 
 
 **Example:**  Omitted. (This function can be directly integrated into the spreadsheet toolkit.)
 
@@ -63,7 +63,7 @@ For all valid operations, we provide the corresponding details as follows.
 
 **Definition:**  Delete one or more tables from the workspace, either explicitly or implicitly.
 
-**Illustration:** ![delete-tables](https://github.com/rigel-data/rigel-system/blob/master/pics/delete-tables.png)
+**Illustration:** ![delete-tables](https://github.com/rigel-data/rigel-sys/blob/master/pics/delete-tables.png)
 
 **Example:** In Rigel, deleting a table explicitly is equivalent to removing a table from the source view. (For the current version, this function is still under development.) Similarly, the implicit delete operation, i.e. deleting some table viewed as a sub-operation when performing other operations, can also be easily supported in Rigel. However, we keep the original table in most operations and prefer the explicit deletion, enabling users to exert further operations on the original table.
 
@@ -73,7 +73,7 @@ For all valid operations, we provide the corresponding details as follows.
 
 **Definition:**  Delete one or more arbitrary columns from the workspace.
 
-**Illustration:** ![delete-columns](https://github.com/rigel-data/rigel-system/blob/master/pics/delete-columns.png)
+**Illustration:** ![delete-columns](https://github.com/rigel-data/rigel-sys/blob/master/pics/delete-columns.png)
 
 **Example:** Take removing repeated variables as example. Consider the original specification is  **(state), () => (crime + crime)**, we can remove the duplicated *crime* by simply deleting it from the *cell* part. The derived specification will be **(state), () => (crime)**.
 
@@ -97,7 +97,7 @@ For all valid operations, we provide the corresponding details as follows.
 
 **Definition:**  Delete one or more arbitrary rows from the workspace.
 
-**Illustration:** ![delete-rows](https://github.com/rigel-data/rigel-system/blob/master/pics/delete-columns.png)
+**Illustration:** ![delete-rows](https://github.com/rigel-data/rigel-sys/blob/master/pics/delete-columns.png)
 
 **Example:** Similar to deleting rows, we can remove irrelevant or repeated rows by deleting from the *cell* part in the specification or  using operations like *filter* on variables in the *row* part.
 
@@ -107,7 +107,7 @@ For all valid operations, we provide the corresponding details as follows.
 
 **Definition:**  Transform tables while maintaining the original schema.
 
-**Illustration:** ![transform-tables-rearrange](https://github.com/rigel-data/rigel-system/blob/master/pics/transform-tables-rearrange.png)
+**Illustration:** ![transform-tables-rearrange](https://github.com/rigel-data/rigel-sys/blob/master/pics/transform-tables-rearrange.png)
 
 **Example:** The *sort* operation in Rigel is an example. Specifically, by changing the specification from **(state), (year) => (crime)** to **(ascsort(state)), (year) => (crime)**, we can rearrange the rows according to the alphabetical order of the state names, where *ascsort* means sorting the variable in ascending order. Moreover, Rigel also has the potential to support more arbitrary rearrangements by adding more aggregation functions into the system.
 
@@ -135,7 +135,7 @@ For all valid operations, we provide the corresponding details as follows.
 
 **Definition:**  Transform tables as well as the schema.
 
-**Illustration:** ![transform-tables-reshape](https://github.com/rigel-data/rigel-system/blob/master/pics/transform-tables-reshape.png)
+**Illustration:** ![transform-tables-reshape](https://github.com/rigel-data/rigel-sys/blob/master/pics/transform-tables-reshape.png)
 
 **Example:** In Rigel, most interactions fall into this category. By dragging or inputting the variables into the *row*, *column* or *cell* part, users build their own table schema and restructure the dataset. The following example illustrates transforming the raw table in the dataset into a tidy form using the specification **(state), (year) => (crime)**.
 
@@ -161,7 +161,7 @@ For all valid operations, we provide the corresponding details as follows.
 
 **Definition:**  Transform some column by exerting a mapping on each value in it.
 
-**Illustration:** ![transform-columns](https://github.com/rigel-data/rigel-system/blob/master/pics/transform-columns.png)
+**Illustration:** ![transform-columns](https://github.com/rigel-data/rigel-sys/blob/master/pics/transform-columns.png)
 
 **Example:** The *split* operation in Rigel meets the requirements, as it divides the values of some variable into some parts and take one segment as the result. (For the current version, this function is under development.) For example, consider a table including a list of addresses and corresponding owners. The address contains both the address type (Fax or Tel) and the number. The user only wants to keep the address type in the target table. So the user transforms the table by using the specification **(Name), () => (split(Number, ':')[0])**, as illustrated in the following input & output  table. Here *split(Number,':')[0]* means splitting the values of *Number* by ':' and take the substring with index *0* (i.e. the first part) as the result. For arbitrary mapping on column, more operations can be implemented into the system.
 
@@ -189,7 +189,7 @@ For all valid operations, we provide the corresponding details as follows.
 
 **Definition:**  Transform some row by exerting a mapping on each value in it.
 
-**Illustration:** ![transform-rows](https://github.com/rigel-data/rigel-system/blob/master/pics/transform-rows.png)
+**Illustration:** ![transform-rows](https://github.com/rigel-data/rigel-sys/blob/master/pics/transform-rows.png)
 
 **Example:**  Similar to *Transform Columns*, the operations that can be applied to a single column are also applicable to a row.
 
@@ -199,7 +199,7 @@ For all valid operations, we provide the corresponding details as follows.
 
 **Definition:**  Divide tables row-wise into sub-tables.
 
-**Illustration:** ![separate-tables-subset](https://github.com/rigel-data/rigel-system/blob/master/pics/separate-tables-subset.png)
+**Illustration:** ![separate-tables-subset](https://github.com/rigel-data/rigel-sys/blob/master/pics/separate-tables-subset.png)
 
 **Example:**  As the output of such operations involve multiple tables, they are not directly implemented in current version of Rigel. Nevertheless, by using multiple specifications, Rigel still has the potential to handle this sort of transformation.  For example, the row-wise division can be seen as two filter operations, each leading to a new sub-table. Consider the tables given in example input. To divide the table, users can use specification **(filter(Name, 'Nile', 'Jean'), () => (Number))** and **(filter(Name, 'Bach', 'Peter'), () => (Number))** to derive two sub-tables.
 
@@ -232,7 +232,7 @@ and
 
 **Definition:**  Divide tables row-wise into sub-tables, each containing a single row.
 
-**Illustration:** ![separate-tables-decompose](https://github.com/rigel-data/rigel-system/blob/master/pics/separate-tables-decompose.png)
+**Illustration:** ![separate-tables-decompose](https://github.com/rigel-data/rigel-sys/blob/master/pics/separate-tables-decompose.png)
 
 **Example:**  Similar to *Separate Tables - Subset*, this sort of transformation can also be viewed as a sequence of *filter* operations. As a result, Rigel can still potentially support such transformation.
 
@@ -242,7 +242,7 @@ and
 
 **Definition:**  Divide tables column-wise into sub-tables.
 
-**Illustration:** ![separate-tables-decompose](https://github.com/rigel-data/rigel-system/blob/master/pics/separate-tables-decompose.png)
+**Illustration:** ![separate-tables-decompose](https://github.com/rigel-data/rigel-sys/blob/master/pics/separate-tables-decompose.png)
 
 **Example:**  Similar to *Separate Tables - Subset*, this sort of transformation can also be viewed as a sequence of *filter* operations. The only distinction lies in the target of *filter* operation shifts from variables in *row* to *cell* part of the specification.
 
@@ -252,7 +252,7 @@ and
 
 **Definition:**  Decompose a column into new variables.
 
-**Illustration:** ![separate-columns](https://github.com/rigel-data/rigel-system/blob/master/pics/separate-columns.png)
+**Illustration:** ![separate-columns](https://github.com/rigel-data/rigel-sys/blob/master/pics/separate-columns.png)
 
 **Example:**  In Rigel, decomposing columns into multiple variables can be viewed as a combination of multiple operations, where each operation derives a new variable based on the original column and inserts the result into the corresponding *row* or *column* part of the specification. Consider the table including a list of addresses and corresponding owners mentioned above. When the user wants to divide the *Number* field into address type and address number, he/she can simply use the *split* operation twice to derive variables representing the left and right part of *Number*. Then he inserts the two variables into *column* part of the specification, deriving the specification **(Name), () => (Split(Number, ':')[0] + Split(Number, ':')[1])**. The example is illustrated as follows.
 
@@ -280,7 +280,7 @@ and
 
 **Definition:**  Decompose a row into new variables.
 
-**Illustration:** ![separate-rows](https://github.com/rigel-data/rigel-system/blob/master/pics/separate-rows.png)
+**Illustration:** ![separate-rows](https://github.com/rigel-data/rigel-sys/blob/master/pics/separate-rows.png)
 
 **Example:**  Similar to *Separate Columns*, Rigel supports this type of operations well.
 
@@ -290,7 +290,7 @@ and
 
 **Definition:**  Union two tables row-wise into a new table.
 
-**Illustration:** ![combine-tables-extend](https://github.com/rigel-data/rigel-system/blob/master/pics/combine-tables-extend.png)
+**Illustration:** ![combine-tables-extend](https://github.com/rigel-data/rigel-sys/blob/master/pics/combine-tables-extend.png)
 
 **Example:**  Because concatenating two tables row-wise may ruin the schemas of the base tables, users are not encouraged to perform such operations in Rigel, since Rigel focuses on high-level transformations and is aimed to generate more meaningful target tables. However, for some simple cases, Rigel is still able to derive the target result. The *union* operation in Rigel supports the combination of tables based on a merge of multiple variables. (For current version, this operation is under development.) For example, given two original tables with specification **(state_1), (year_1) => (crime_1)** and **(state_2), (year_2) => (crime_2)**, the user can merge two tables row-wise by using specification **(union(state_1, state_2)), (union(year_1, year_2)) => (union(crime_1, crime_2))**.  
 
@@ -323,7 +323,7 @@ and
 
 **Definition:**  Join tables column-wise based on values in some key column. The relationship between the key columns is bijective.
 
-**Illustration:** ![combine-tables-supplement](https://github.com/rigel-data/rigel-system/blob/master/pics/combine-tables-supplement.png)
+**Illustration:** ![combine-tables-supplement](https://github.com/rigel-data/rigel-sys/blob/master/pics/combine-tables-supplement.png)
 
 **Example:**  When the *union* operation in Rigel is exerted on the key column, two tables can be merged based on the corresponding values in the key column. (For current version, this operation is under development.) For example, given two tables indicating the relationship between states and GDP or crime rate respectively, the user can combine these tables and put the three variables in a single table by taking *state* as the key column. Specifically, let the specification of base tables be **(state_1), () => (GDP)** and **(state_2), () => (crime)**, the target specification will be **(union(state_1, state_2)), () => (GDP + crime)**.
 
@@ -354,7 +354,7 @@ and
 
 **Definition:**  Join tables column-wise based on values in some key column. The relationship between the key columns is injective.
 
-**Illustration:** ![combine-tables-match](https://github.com/rigel-data/rigel-system/blob/master/pics/combine-tables-match.png)
+**Illustration:** ![combine-tables-match](https://github.com/rigel-data/rigel-sys/blob/master/pics/combine-tables-match.png)
 
 **Example:**  When the *intersection* operation in Rigel is exerted on the key column, two tables can be merged based on the intersection of corresponding values in the key column. (For current version, this operation is under development.) For example, given two tables indicating the relationship between states and GDP or crime rate respectively and the states are not exactly equal, the user can combine these tables, including states that exist in both tables and corresponding GDP or crime. Specifically, let the specification of base tables be **(state_1), () => (GDP)** and **(state_2), () => (crime)**, the target specification will be **(intersection(state_1, state_2)), () => (GDP + crime)**.
 
@@ -384,7 +384,7 @@ and
 
 **Definition:**  Derive a new column based on multiple columns in a single table. 
 
-**Illustration:** ![combine-columns](https://github.com/rigel-data/rigel-system/blob/master/pics/combine-columns.png)
+**Illustration:** ![combine-columns](https://github.com/rigel-data/rigel-sys/blob/master/pics/combine-columns.png)
 
 **Example:**  In Rigel, *Concat* is an operation to perform a concatenation of values from multiple columns. For example, a user wants to combine the address type field and address number field in the same table to derive a new field. One specification meeting the requirements can be **(Name), () => (Concat(Type, Number))**.
 
@@ -410,7 +410,7 @@ and
 
 **Definition:**  Combine multiple rows by using an aggregation function on some variable grouped by another variable.
 
-**Illustration:** ![combine-rows-summarize](https://github.com/rigel-data/rigel-system/blob/master/pics/combine-rows-summarize.png)
+**Illustration:** ![combine-rows-summarize](https://github.com/rigel-data/rigel-sys/blob/master/pics/combine-rows-summarize.png)
 
 **Example:**  In Rigel, plenty of frequently used aggregation functions are provided, such as *sum*, *average* and *count*. Take *sum* as an example. A user wants to know the total crime rates over a fixed set of years for each state. One valid specification would be **(state), (), (sum(crime))**.
 
